@@ -3,24 +3,24 @@ require 'spec_helper'
 describe Rule110 do
 	context "initialize" do
 		it "should save the correct num" do
-			game = Rule110.new(5)
+			game = Rule110::Game.new(5)
 			expect(game.num).to eq 5
 		end
 
 		it "should initialize empty rules" do
-			game = Rule110.new(5)
+			game = Rule110::Game.new(5)
 			expect(game.rules).to eq({})
 		end
 
 		it "should initialize the array" do
-			game = Rule110.new(5)
+			game = Rule110::Game.new(5)
 			expect(game.arr).to eq [0,0,0,0,1]
 		end
 	end
 
 	context "add_rule" do
 		before(:each) do
-			@game = Rule110.new(5)
+			@game = Rule110::Game.new(5)
 		end
 
 		it "should accept and save a rule" do

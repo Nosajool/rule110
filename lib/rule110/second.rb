@@ -1,4 +1,4 @@
-class Rule110
+class Second
 	attr_accessor :num
 	attr_accessor :rules
 	attr_accessor :temp
@@ -50,4 +50,3 @@ class Rule110
 		print_rest
 	end
 end
-
