@@ -23,34 +23,30 @@ module Rule110
 			@arr << 1
 		end
 
-		def print_row(array)
+		def puts_row(array)
 			array.each {|n| print n}
 			puts
 		end
 
-		def calculate_next_row
+		def calculate_and_print_next_row
+			@temp = []
 			@temp[0] = @rules[[0,@arr[0], @arr[1]]]
 			for i in 1..(@num-2) do
 				@temp[i] = @rules[[@arr[i-1],@arr[i],@arr[i+1]]]
 			end
 			@temp << 1
-		end
-
-		def print_individual_row
-			@temp = []
-			calculate_next_row
-			print_row(@temp)
+			puts_row(@temp)
 			@arr = @temp
 		end
 
 		def print_rest
 			for j in 0..(@num-2) do
-				print_individual_row
+				calculate_and_print_next_row
 			end
 		end
 
 		def print_pic
-			print_row(@arr)
+			puts_row(@arr)
 			print_rest
 		end
 	end
